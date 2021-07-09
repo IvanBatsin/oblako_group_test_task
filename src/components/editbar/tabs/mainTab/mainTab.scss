@@ -1,0 +1,52 @@
+@import '../../../../styles/variables.scss';
+
+.dropdown {
+  width: 100%;
+  margin-bottom: 52px;
+}
+
+.text-input.secondary {
+  width: 100%;
+  margin-bottom: 34px;
+
+  div input {
+    color: $color-light-theme-secondary;
+  }
+  div label {
+    font-size: 10px !important;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 34px;
+
+  .text-input {
+    width: 246px;
+
+    div input {
+      font-size: 12px;
+    }
+  }
+
+  .dropdown {
+    width: 246px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: $breakpoint-sm-max) {
+    & {
+      flex-direction: column;
+
+      .text-input, .dropdown {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.radio-fields {
+  margin-bottom: 20px;
+}

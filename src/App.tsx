@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/main.scss';
 
-function App() {
+import { Header } from './components/header/Header';
+import { Main } from './components/main/Main';
+import { Editbar } from './components/editbar/Editbar';
+
+export const App: React.FC = () => {
+  const [showModal, setShowModal] = React.useState<boolean>(false);
+
+  const openCloseModal = (): void => {
+    setShowModal(!showModal);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header openCloseModal={openCloseModal}/>
+      <Main/>
+      <Editbar show={showModal} closeModal={openCloseModal}/>
+    </>
+  )
 }
-
-export default App;

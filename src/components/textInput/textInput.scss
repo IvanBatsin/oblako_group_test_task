@@ -1,0 +1,50 @@
+@import '../../styles/variables.scss';
+
+.text-input{
+  position:relative;
+  margin-right: 30px;
+  width: 166px;
+  display: flex;
+  border-bottom: 1px solid $color-primary-lines-gray;
+  align-items: center;
+
+  img {
+    &:first-child {
+      margin-right: 17px;
+    }
+  }
+}
+.text-input div {
+  position: relative;
+  flex-grow: 1;
+}
+.text-input div label{
+  position:absolute;
+  top:7px;
+  left:0px;
+  font-size:12px;
+  color:grey;	
+  transition: all $transition ease-in-out;
+}
+.text-input div input{ 
+  font-family: 'Montserrat', sans-serif;
+  border:0;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:12px;
+  color:black;
+}
+.text-input div input:focus{ 
+ border:none;	
+ outline:none;	
+}
+.text-input:focus-within {
+  border-bottom:1px solid $color-primary;
+}
+
+.text-input div input:focus ~ label,
+.text-input div input:valid ~ label{
+  top:-12px;
+  font-size:12px;
+}

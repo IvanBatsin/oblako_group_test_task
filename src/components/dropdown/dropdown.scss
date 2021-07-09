@@ -1,0 +1,77 @@
+@import '../../styles/variables.scss';
+
+.dropdown {
+  border-bottom: 1px solid $color-primary-lines-gray;
+  position: relative;
+
+  &.open {
+    border-bottom: 1px solid $color-primary;
+  }
+
+  label {
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: $fw-medium;
+    font-family: 'Montserrat', sans-serif;
+    color: $color-light-theme-secondary;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 7px;
+    cursor: pointer;
+
+    img {
+      width: 12px;
+      height: 15px;
+    }
+
+    span {
+      margin-right: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &_items {
+    @include list_styles_remove();
+    position: absolute;
+    font-size: 12px;
+    font-weight: $fw-medium;
+    color: black;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+    width: 100%;
+    background-color: white;
+    margin-top: 5px;
+    z-index: 2;
+    transition: $transition;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+
+    &.open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    li {
+      padding: 8px;
+      cursor: pointer;
+      transition: $transition;
+
+      &.active_item {
+        color: $color-primary;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .1);
+      }
+    }
+  }
+}

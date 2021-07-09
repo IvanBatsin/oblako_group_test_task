@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+
+.section-header {
+
+  .header-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-display: row;
+    padding: 27px;
+
+    h4 {
+      font-size: 14px;
+      font-weight: $fw-bold;
+      list-style: 18px;
+      display: none;
+    }
+  
+    .btn {
+      color: $color-primary;
+      font-size: 12px;
+
+      &.full {
+        img {
+          margin-right: 11.75px;
+        }
+      }
+
+      &.short {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-sm-max) {
+      & {
+        padding: 19px 11px;
+      }
+      h4, .btn.short {
+        display: block;
+      }
+      .btn.full {
+        display: none;
+      }
+    }
+  }
+
+  .header-low {
+    padding-left: 67px;
+    padding-right: 67px;
+
+    &_navigation {
+      font-size: 12px;
+      font-size: 12px;
+      font-weight: $fw-medium;
+      line-height: 16px;
+      color: $color-light-theme-secondary;
+      margin-bottom: 16px;
+    }
+    &_title {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      img {
+        width: 27px;
+        height: 29px;
+        margin-right: 18px;
+      }
+
+      h1 {
+        font-size: 38px;
+        font-weight: $fw-bold;
+        line-height: 40px;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-sm-max) {
+      & {
+        display: none;
+      }
+    }
+  }
+}

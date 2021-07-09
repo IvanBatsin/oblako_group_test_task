@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.list {
+  @include list_styles_remove();
+
+  &_item {
+    padding: 10px 8px;
+    border-radius: 4px;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+}

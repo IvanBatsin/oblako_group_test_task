@@ -1,0 +1,72 @@
+@import '../../styles/variables.scss';
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, .8);
+  display: flex;
+  justify-content: flex-end;
+  transition: $transition;
+  transform: translateX(100vw);
+  z-index: 10;
+
+  &.show {
+    transform: translateX(0);
+  }
+}
+.panel {
+  border-left: 1px solid rgba(0, 0, 0, .01);
+  box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.08);
+  width: 70%;
+  background-color: white;
+  overflow-y: auto;
+
+  @media screen and (max-width: $breakpoint-xl-max) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: $breakpoint-lg-max) {
+    width: 100%;
+  }
+
+  &_header {
+    h3 {
+      font-size: 18px;
+      font-weight: $fw-bold;
+      line-height: 24px;
+    }
+
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+
+    &_buttons {
+      display: flex;
+
+      .btn.clear {
+        img {
+          height: 12px;
+        }
+      }
+    }
+  }
+
+
+  .divider {
+    padding-left: 24px;
+    margin-bottom: 33px;
+  }
+
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+
+    @media screen and (max-width: $breakpoint-md-max) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

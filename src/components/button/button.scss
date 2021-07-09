@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.btn {
+  @include btn_styles_remove();
+
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: $transition;
+  padding: 10px 16px;
+
+  &:hover {
+    background-color: rgba($color: $color-primary, $alpha: .05);
+  }
+  &:focus {
+    background-color: rgba($color: $color-primary, $alpha: .1);
+  }
+}
